@@ -114,7 +114,7 @@ Because S3 server access logging is asynchronous and best-effort, log delivery m
 
 By default `allow_force_destroy = false`: this prevents accidental deletion of nonempty buckets. If log files or object versions remain, `terraform destroy` may fail with `BucketNotEmpty`.
 
-After preserving evidence and confirming that the buckets contain *only disposable lab data*:
+After preserving evidence and confirming that the buckets contain *only disposable lab data*: 
 
 ```powershell
 # Apply the state change before destroy; this is important for force_destroy.
