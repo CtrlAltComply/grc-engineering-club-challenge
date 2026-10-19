@@ -1,0 +1,6 @@
+# Copy to terraform.tfvars and set a Region permitted by your AWS project.
+project_name = "grc-challenge"
+environment  = "dev"
+region       = "us-east-2"
+# Optional LAB-ONLY cleanup override, defaults to false:
+# allow_force_destroy = false

@@ -1,0 +1,62 @@
+{
+  "schema": "grc-lab-verification-summary/v1",
+  "assessment_date": "2026-10-19",
+  "environment": "dev",
+  "region": "us-east-2",
+  "deployment_status": "destroyed_after_verification",
+  "evidence_origin": "Historical live AWS API checks reported during the lab; raw outputs archived privately",
+  "results": [
+    {
+      "mapping": "SC-28",
+      "requirement": "SSE-S3 AES256 both buckets",
+      "result": "PASS",
+      "observed": {
+        "primary": "AES256",
+        "log": "AES256"
+      }
+    },
+    {
+      "mapping": "AC-3",
+      "requirement": "All four bucket public access flags true",
+      "result": "PASS",
+      "observed": {
+        "primary": true,
+        "log": true
+      }
+    },
+    {
+      "mapping": "CM-6",
+      "requirement": "Primary versioning enabled",
+      "result": "PASS",
+      "observed": {
+        "primary": "Enabled"
+      }
+    },
+    {
+      "mapping": "CM-6",
+      "requirement": "Four required tags on both buckets",
+      "result": "PASS",
+      "observed": {
+        "primary": true,
+        "log": true
+      }
+    },
+    {
+      "mapping": "AU-3/AU-6",
+      "requirement": "Logging to dedicated bucket with constrained write permission",
+      "result": "PASS",
+      "observed": {
+        "logging_prefix": "logs/",
+        "owner_enforced": true,
+        "policy_scope_verified": true,
+        "log_objects_observed": 2,
+        "sample_log_inspected": true
+      }
+    }
+  ],
+  "limitations": [
+    "Point-in-time checks only",
+    "S3 server access logging is best-effort",
+    "Partial lab control mapping, not NIST 800-53 certification"
+  ]
+}
